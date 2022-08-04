@@ -15,7 +15,7 @@ const readline = require("readline")
 // })
 
 function logIn() {
-    const password = ; //What how who when why whom?!?! (one moment I gotta relearn js)
+    const password = "HELP"; //What how who when why whom?!?! (one moment I gotta relearn js)
     const hash = argon2.hash(password, {type: argon2.argon2id})
     console.log(hash)
     if ( password === "ilder") {
