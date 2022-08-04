@@ -9,6 +9,12 @@ const rl = readline.createInterface({
 
 rl.question("Enter your password: ", async (password) => {
     const hash = await argon2.hash(password, {type: argon2.argon2id})
-    console.log('hash:', {hash})
-    console.log(`Match? ${await argon2.verify(hash, password)}`);
+    
+    
+    rl.question("re-enter your password: ", async (pw) => {
+        const correct = await argon2.verify(hash, pw)
+        console.log(correct ? "Matches" : "iDo not match")
+        console.log('Your hash:', {hash})
+        process.exit(0)
+    })
 })
