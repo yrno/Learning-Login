@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="password" name="password" id="passfield" placeholder="Password..">
-    <input type="submit" value="Login" id="login-form-submit" onclick="logIn()">
+    <form name="login-form" onsubmit="logIn()">
+        <input type="password" name="password" id="login-passfield" placeholder="Password..">
+        <input type="submit" value="Login" id="login-submit">
+    </form>
     <script src="hash.js"></script>
 </body>
 </html>
