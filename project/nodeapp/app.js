@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/hashedlogin');
 
 var app = express();
 
@@ -20,11 +20,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/hashedlogin', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
+});
+
+app.post('/project/nodeapp/views/hashedlogin.ejs', function(req, res) {
+  res.render('/project/nodeapp/views/hashedlogin.ejs');
 });
 
 // error handler
