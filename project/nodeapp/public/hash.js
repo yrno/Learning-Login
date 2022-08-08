@@ -1,27 +1,15 @@
-const argon2 = require("argon2")
-const readline = require("readline")
+const loginForm = document.getElementById("login-form");
+const loginButton = document.getElementById("login-form-submit");
+const loginErrorMsg = document.getElementById("login-error-msg");
 
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const password = loginForm.password.value;
 
-// rl.question("Enter your password: ", async (password) => {
-//     const hash = await argon2.hash(password, {type: argon2.argon2id})
-    
-    
-//     rl.question("re-enter your password: ", async (pw) => {
-//         const correct = await argon2.verify(hash, pw)
-//         console.log(correct ? "Matches" : "iDo not match")
-//         console.log('Your hash:', {hash})
-//         process.exit(0)
-//     })
-// })
-
-function logIn() {
-    const password = document.getElementById(login-passfield); // Retrieves user's input in the password field
-    const hash = argon2.hash(password, {type: argon2.argon2id})
-    console.log(hash)
-    if ( password === "ilder") {
+    if (password === "ilder") {
         alert("You have successfully logged in.");
-        console.log("User authenticated");
+        location.reload();
     } else {
-        console.log("Could not log in..");
+        loginErrorMsg.style.opacity = 1;
     }
-}
+})
