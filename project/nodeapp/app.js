@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/hashedlogin');
-var loginhash = require('./routes/api');
+
 
 var app = express();
 
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/hashedlogin', loginRouter);
-app.use('/api', loginhash);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
