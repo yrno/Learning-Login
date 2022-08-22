@@ -21,8 +21,6 @@ router.post('/', async (req, res) => {
     res.render('fail')
     return;
     }
-
-    res.render('hashedlogin')
 });
 
 module.exports = router;
