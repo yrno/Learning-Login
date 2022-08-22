@@ -17,6 +17,10 @@ router.post('/', async (req, res) => {
     if (correct) {
         res.render('welcome')
         return;
+    } else
+    {
+    res.render('hashedlogin')
+    return;
     }
 
     res.render('hashedlogin')
