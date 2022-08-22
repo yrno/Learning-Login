@@ -6,10 +6,10 @@ loginButton.addEventListener("click", (e) => {
     e.preventDefault();
     const password = loginForm.password.value;
 
-    if ( password === "ilder") {
+    if (password === "ilder") {
         alert("You have successfully logged in.");
         location.reload();
     } else {
-        loginErrorMsg.style.opacity = 1; 
+        loginErrorMsg.style.opacity = 1;
     }
 })
