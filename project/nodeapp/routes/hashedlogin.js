@@ -8,10 +8,9 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
     const userinput = req.body.password;
+    const hash = "$argon2id$v=19$m=4096,t=3,p=1$OiZMJ1HpDGT1yHqfOqbMdQ$Dpaw9lJ8IKL+p/QTg0H9h/gwY+TTHSLIdDj3tQQCDFc";
 
-    const hash = await argon2.hash(userinput, {type: argon2.argon2id});
-    console.log(hash);
-    const correct = await argon2.verify(hash, "ilder");
+    const correct = await argon2.verify(hash, userinput);
     console.log(correct);
 
     if (correct) {
